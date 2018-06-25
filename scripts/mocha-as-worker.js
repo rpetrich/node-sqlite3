@@ -4,6 +4,7 @@ const worker_threads = require("worker_threads");
 const path = require("path");
 
 if (worker_threads.isMainThread) {
+	require("..");
 	const worker = new worker_threads.Worker(__filename, { workerData: { windowSize: process.stdout.getWindowSize() } });
 	worker.on("error", console.error);
 } else {

@@ -45,4 +45,19 @@
 #endif
 
 
+#if __cplusplus >= 201103L
+
+    #define NODE_SQLITE3_THREAD_LOCAL thread_local
+
+#elif defined(_WIN32)
+
+    #define NODE_SQLITE3_THREAD_LOCAL __declspec(thread)
+
+#else
+
+    #define NODE_SQLITE3_THREAD_LOCAL __thread
+
+#endif
+
+
 #endif // NODE_SQLITE3_SRC_THREADING_H

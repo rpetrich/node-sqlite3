@@ -6,7 +6,7 @@
 
 using namespace node_sqlite3;
 
-Nan::Persistent<FunctionTemplate> Database::constructor_template;
+NODE_SQLITE3_THREAD_LOCAL Nan::Persistent<FunctionTemplate> Database::constructor_template;
 
 NAN_MODULE_INIT(Database::Init) {
     Nan::HandleScope scope;

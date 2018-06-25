@@ -9,7 +9,7 @@
 
 using namespace node_sqlite3;
 
-Nan::Persistent<FunctionTemplate> Statement::constructor_template;
+NODE_SQLITE3_THREAD_LOCAL Nan::Persistent<FunctionTemplate> Statement::constructor_template;
 
 NAN_MODULE_INIT(Statement::Init) {
     Nan::HandleScope scope;
